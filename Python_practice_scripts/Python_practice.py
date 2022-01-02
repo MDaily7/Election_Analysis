@@ -14,4 +14,8 @@ if "Arapahoe" or "El Paso" in counties:
     print("Arapahoe or El Paso is in the list of counties")
 else: 
     print("Neither Arapahoe or El Paso are in the list of counties")
-    
+
+for county in counties:
+    print(county)    
+for i in range(len(counties)):
+    print(counties[i])
