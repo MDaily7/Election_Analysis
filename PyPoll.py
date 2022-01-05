@@ -30,29 +30,43 @@ with open(file_to_load) as election_data:
             candidate_options.append(candidate_name)
             candidate_votes[candidate_name] = 0
         candidate_votes[candidate_name]+= 1
-#Obtain percentage of voters per candidate
-for candidate_name in candidate_options:
-    votes = candidate_votes[candidate_name]
-    percentage_votes = float(votes) / float(total_votes) *100
-    #print each candidates name, their votes, and their percentage of votes
-    print(f'{candidate_name}, {percentage_votes:.1f}%, ({votes:,})\n')
+#Saving Results to txt file
+with open(file_to_save, "w") as txt_file:
+    election_results = (
+     f'\nElection Results\n'
+     f'----------------------\n'
+     f'Total Votes: {total_votes:,}\n'
+     f'----------------------\n'   
+    )
+    print(election_results, end="")
+
+    #Save the final vote count to the text file.
+    txt_file.write(election_results)
+
+    #Obtain percentage of voters per candidate
+    for candidate_name in candidate_options:
+        votes = candidate_votes[candidate_name]
+        percentage_votes = float(votes) / float(total_votes) *100
+        #print each candidates name, their votes, and their percentage of votes
+        #print(f'{candidate_name}, {percentage_votes:.1f}%, ({votes:,})\n')
+        
+        #determine if the values are greater than the winning values, if true set winning values equal to values
+        if (votes > winning_count) and (percentage_votes > winning_percentage):
+            winning_count = votes  
+            winning_percentage = percentage_votes
+            winning_candidate = candidate_name
     
-     #determine if the values are greater than the winning values, if true set winning values equal to values
-    if (votes > winning_count) and (percentage_votes > winning_percentage):
-        winning_count = votes  
-        winning_percentage = percentage_votes
-        winning_candidate = candidate_name
-#print winning candidate summary
-winning_summary = (
-f'-----------------\n'
-f'Winner: {winning_candidate}\n'
-f'Winning Vote Count: {winning_count:,}\n'
-f'Winning Percentage: {winning_percentage:.1f}%\n'
-f'-----------------\n')
-print(winning_summary)
+    #print winning candidate summary
+    winning_summary = (
+    f'-----------------\n'
+    f'Winner: {winning_candidate}\n'
+    f'Winning Vote Count: {winning_count:,}\n'
+    f'Winning Percentage: {winning_percentage:.1f}%\n'
+    f'-----------------\n')
+    
 
 
 #print the total_votes, candidate options, candidate votes, candidate percentage votes
-print(total_votes)
-print(candidate_options)    
-print(candidate_votes)
+#print(total_votes)
+#print(candidate_options)    
+#print(candidate_votes)
