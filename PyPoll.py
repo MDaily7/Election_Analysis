@@ -47,8 +47,11 @@ with open(file_to_save, "w") as txt_file:
     for candidate_name in candidate_options:
         votes = candidate_votes[candidate_name]
         percentage_votes = float(votes) / float(total_votes) *100
-        #print each candidates name, their votes, and their percentage of votes
-        #print(f'{candidate_name}, {percentage_votes:.1f}%, ({votes:,})\n')
+        #print each candidates name, their votes, and their percentage of votes to txt file and terminal
+        candidate_results = (f'{candidate_name}: {percentage_votes:.1f}%, ({votes:,})\n')
+        print(candidate_results)
+
+        txt_file.write(candidate_results)
         
         #determine if the values are greater than the winning values, if true set winning values equal to values
         if (votes > winning_count) and (percentage_votes > winning_percentage):
@@ -63,8 +66,9 @@ with open(file_to_save, "w") as txt_file:
     f'Winning Vote Count: {winning_count:,}\n'
     f'Winning Percentage: {winning_percentage:.1f}%\n'
     f'-----------------\n')
+    print(winning_summary)
     
-
+    txt_file.write(winning_summary)
 
 #print the total_votes, candidate options, candidate votes, candidate percentage votes
 #print(total_votes)
