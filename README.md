@@ -14,3 +14,5 @@ Much of what was done for this audit could have been done manually in Excel. How
 * Software: Python 3.7.6 and VSCode 1.63.2
 * [Election Data](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/election_results.csv)
 * [Python Script](https://github.com/MDaily7/Election_Analysis/blob/main/PyPoll_Challenge.py)
+* [Election Results Text file](https://github.com/MDaily7/Election_Analysis/blob/main/Analysis/election_results.txt)
+* [Terminal Output](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/Terminal_Output.png)
