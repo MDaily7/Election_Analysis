@@ -1,27 +1,12 @@
 # Election_Analysis
-### Project Overview
-A Colorado Board of Elections employee has given you the following taksks to complete the election audit of a recent local congressional election.
-
-1.calculate the total number of votes cast.
-2. get a complete list of candidates who received votes.
-3. calculate the total number of votes each candidate received.
-4. calculate the percentage of votes each cancidate won.
-5. determine the winner of the elction based on popular vote
-
-## Resources
--Data Source: election_results.csv
--Software: Python 3.7.6, Visual Studio Code, 1.63.2
-
-## Summary
-The analysis of the election shows that:
--There were 369,711 votes cast in the election.
-
--Candidates: Charles Casper Stockham, Diana DeGette, Raymon Anthony Doane
-
--Candidate Results: 
-Charles Casper Stockham: 23.0% of the votes, 85,213 total votes
-Diana DeGette: 73.8% of the votes, 272,892 total votes
-Raymon Anthony Doane: 3.1% of the votes, 11,606 total votes
-
-
-Diana DeGette was the winner of the election with 73.8% of the votes for a total of 272,892 votes. 
+## Project Overview
+We are helping Tom, a Colorado board of Elections employee, with the task of using Python to automate the process of conducting an election audit for a local congressional election. Our goal was to create a program in python that could tally the total number of votes, tally the votes each candidate received and the percentage of votes they received, tally the total votes and percentage of total vote from each county, determine the county with the largest voter turnout, and determine the winning candidate, winning number of votes, and winning vote percentage. 
+## Election-Audit Results
+* 369,711 votes were cast in the election; this was determined by having python count each ballot as the rows in the csv file were looped through as seen in [Vote Counter](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/total_votes_counter.png).
+* Jefferson County accounted for 10.5% of the total votes receiving 38,855 votes, Denver County accounted for 82.8% of the total votes receiving 306,055 votes, and Arapahoe County accounted for 6.7% of the total votes receiving 24,801 votes. 
+* Denver County had the greatest voter turnout. [Largest Turnout](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/Largest_Turnout.png) displays the code block for tracking this information. 
+* Charles Casper Stockham recieved 23.0% of the votes with 85,213 total votes, Diana DeGette recieved 73.8% of the votes with 272,892 total votes, and Raymon Anthony Doane recieved 3.1% of the votes with 11,606 total votes.
+* Diana DeGette was the winner of the election by popular vote after receiving 73.8% of the total votes with 272,892 votes. 
+* A summary of the election results can be seen in [Election Results](https://github.com/MDaily7/Election_Analysis/blob/main/Analysis/election_analysis.txt) which is the text file output of our python script. 
+## Election Audit Summary
+Much of what was done for this audit could have been done manually in Excel. However, the process could have taken just as much time in Excel as it did for us to write the Python script with the key difference being that the script can be used for any future elections. In the long run, this will easily save many hours of time and effort and could even be used for senatorial or local elections. It is likely that some changes would need to be made for different types of elections and those changes would be unique to each type of election. For example, counties would need to be changed to senatorial districts for a senatorial election, so you would need to change the [Counties List and Dictionary](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/County%20List%20and%20Dictionary.png) to a [District List and Dictionary](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/District%20List%20and%20Dictionary.png) and then change the [County Code](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/County%20Code.png) to [District Code](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/District%20Code.png). You would also want to modify all of the f string literals to display the appropriate information for whatever election was taking place. Sticking with our senatorial election example, changing [County Output](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/County%20Turnout%20f%20string.png) to [District Output](https://github.com/MDaily7/Election_Analysis/blob/main/Resources/District%20Turnout%20f%20string.png) for example. There are many other changes that may need to be or can be made, but they would likely be far simpler to do than to make an audit from scratch. In the end, adapting and utilizing the script will likely be a tremendous time saver. 
